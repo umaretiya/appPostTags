@@ -1,0 +1,79 @@
+#mainPositions{
+    border-bottom: 2px solid rgba(213, 210, 209, 0.7);
+    border-radius: 10px;
+    height: 95vh; 
+    margin-top: 6%;
+    width: 40%;
+    margin-left: 48em;
+    float: right;
+    background-color: rgb(32, 32, 32,0.5);
+    flex-direction: column;
+    transition: background-color 0.5s ease;
+}
+
+#mainPositions:hover{
+    background-color: rgb(224, 222, 219);
+}
+
+h1{
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+main h2{
+    text-align: left;
+    color: rgb(15, 15, 172,0.7);
+}
+h2:hover{
+    color: brown;
+}
+section{
+    padding: 2px;
+}
+section:hover{
+    color: rgb(48, 12, 180);
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.pos-first{
+  align-items:end;
+  flex-direction: inline;
+  /* border-top: 1px solid rgba(213, 210, 209, 0.7); */
+  border-radius: 10px;
+  display: flex;
+  gap: 4px;
+}
+
+.pos-second{
+    border-bottom: 1px solid rgba(213, 210, 209, 0.7);
+    border-radius: 2px;
+}
+.positions{
+    display: inline;
+}
+
+.positions:last-child{
+    margin-left: 25em;
+    /* margin-left: 260px; */
+    position:absolute;
+}
+.pos-lower{
+    display: inline;
+}
+
+.pos-lower:last-child{
+    margin-left: 11em;
+    position: relative;
+}
+
+main:hover{
+    background-color: rgba(170, 185, 155, 0.8);
+    transition: background-color 1s ease;
+
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition:background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+

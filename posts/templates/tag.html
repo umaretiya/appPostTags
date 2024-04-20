@@ -1,0 +1,27 @@
+{% extends "nav.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}
+tag
+{% endblock title %}
+{{super()}}
+
+{% block content %}
+
+<div class="col" style=" border: 2px solid rgb(229, 228, 226); border-radius: 0px;">
+    {% for t in tags %}
+    <p>{{ t.body }}</p>
+    {% endfor %}
+</div>
+
+<div class="col" style=" border: 2px solid rgb(229, 228, 226); border-radius: 0px;">
+    <form role="form" action="" method="POST">
+        <div class="input-group mb-4">
+            {{ tagForm.body( class="form-control", type="text") }}
+        </div>
+        <button type="submit" class="btn btn-primary shadow-2 mb-4">Tag</button>
+
+    <!-- <label for="submit">submit</label> -->
+    </form>
+</div>
+
+{% endblock content %}

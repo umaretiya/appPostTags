@@ -1,0 +1,35 @@
+{%  extends "nav.html" %}
+
+{% block content %}
+
+    <main id="mainPositions">
+        {% if context %}
+        {% for pos in context %}
+        <section class="pos-first">
+            <div class="positions">{{ pos['symbolname']}}</div>
+            <div class="positions" style="background-color: rgb(91, 90, 90); border-radius: 5px; font-size: small;">{{ pos['exchange']}}</div>
+            <div class="positions">{{ pos['expirydate']}}</div>
+            {% if pos['pnl'] | float >0 %}
+            <div class="positions" style="color: green;">+{{ pos['pnl']}}</div>
+            {% else %}
+            <div class="positions text-danger" style="color:rgb(255, 0,0, 0.7);">{{ pos['pnl']}}</div>
+            {% endif %}
+        </section>
+        <section class="pos-second">
+            <div class="pos-lower" style="background-color: rgb(91, 90, 90); border-radius: 5px; font-size: small;">CLOSED</div>
+            <div class="pos-lower" style="background-color: rgb(91, 90, 90); border-radius: 5px; font-size: small;">CF</div>
+            <div class="pos-lower" style="color: green;">B</div>
+            <div class="pos-lower">{{ pos['totalbuyavgprice']}}</div>
+            <div class="pos-lower" style="color: red;">S</div>
+            <div class="pos-lower">{{ pos['totalsellavgprice']}}</div>
+            <div class="pos-lower"> <span style="text-decoration: solid;">LTP </span> &shy {{ pos['ltp']}}</div>
+        </section>
+        {% endfor %}
+        {% else %}
+        <h2>No open positions found</h4>
+        {% endif %}
+    </main>
+    
+{% endblock content %}
+</body>    
+</html>

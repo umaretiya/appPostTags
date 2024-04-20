@@ -1,0 +1,62 @@
+{% extends "nav.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}
+Post lists
+{% endblock title %}
+{{super()}}
+
+{% block content %}
+<div class="container" style="margin-top: 7%;">
+    <div class="row">
+        <div class="col" style=" border: 2px solid rgb(229, 228, 226); border-radius: 0px;">
+            {% for p in post %}
+                <h3 style="background-color: rgb(238, 244, 242);">{{ p.title }}</h3>
+                <span>{{ p.slug }}</span>
+                <p style="background-color: rgb(159, 159, 156, 0.5);">{{ p.body }}</p>
+                <span>{{ p.created }}</span><hr>
+            {% endfor %}
+        </div>
+
+        <div class="col" style=" border: 2px solid rgb(229, 228, 226); border-radius: 0px;">
+   
+                  
+            {% for t in tags %}
+            <p>{{ t.body }}</p>
+            {% endfor %}
+ 
+        </div>
+
+        <div class="col" style=" border: 2px solid rgb(229, 228, 226); border-radius: 0px;">
+            <form role="form" action="" method="POST">
+
+                <div class="input-group mb-3">
+                    {{ form.title(class="form-control") }}
+                </div>
+
+                <div class="input-group mb-3">
+                    {{ form.slug( class="input form-control") }}
+                </div>
+
+                <div class="input-group mb-4">
+                    {{ form.body( class="form-control", type="text") }}
+                </div>
+    
+            
+                <button type="submit" class="btn btn-primary shadow-2 mb-4">Post</button>
+
+            <!-- <label for="submit">submit</label> -->
+            </form>
+
+            <form role="form" action="" method="POST">
+                <div class="input-group mb-4">
+                    {{ tagForm.body( class="form-control", type="text") }}
+                </div>
+                <button type="submit" class="btn btn-primary shadow-2 mb-4">Tag</button>
+        
+            <!-- <label for="submit">submit</label> -->
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

@@ -1,0 +1,31 @@
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static',filename='loginPopup.css')}}">
+{% endblock head %}
+<body>
+    <h2>Login page</h2>
+    <button class="open-button" onclick="openForm()">Login Here</button>
+
+         <div class="form-popup" id="myForm">
+            <form action="/" class="form-container">
+                <h3 style="align-self: center; position: relative; text-align: center;">Login</h3>
+                <label for="username"><b>Use Name</b></label>
+                <input type="text" name="username" id="username" placeholder="username">
+
+                <label for="password"><b>Password</b></label>
+                <input type="password" name="password" id="password" placeholder="password">
+                <p class="paragr" style="flex-wrap: wrap; font-size:smaller;">By clicking login you agree to our <a href="http://">Terms & Conditions</a> and you have read our <a href="http://">Privacy Policy</a></p>
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    <script>
+        function openForm(){
+            document.getElementById("myForm").style.display="block";
+        }
+        function closeForm(){
+            document.getElementById("myForm").style.display = "none"
+        }
+    </script>
+</body>
+</html>
